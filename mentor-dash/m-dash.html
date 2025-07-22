@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Dashboard - Fluento</title>
+    <link rel="stylesheet" href="./m-dash.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-logo">Fluento</div>
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Main wrapper -->
+    <div class="main-content-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="logo-text">Fluento</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-content">
+                <nav class="sidebar-nav">
+                    <div class="nav-section">
+                        <span class="nav-section-title">Main</span>
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                                    <i class="fas fa-home"></i>
+                                    <span class="nav-text">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#students" class="nav-link" data-section="students">
+                                    <i class="fas fa-users"></i>
+                                    <span class="nav-text">Students</span>
+                                    <span class="nav-badge">24</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#sessions" class="nav-link" data-section="sessions">
+                                    <i class="fas fa-video"></i>
+                                    <span class="nav-text">Sessions</span>
+                                    <span class="nav-badge">8</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#calendar" class="nav-link" data-section="calendar">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span class="nav-text">Calendar</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-section">
+                        <span class="nav-section-title">Analytics</span>
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a href="#analytics" class="nav-link" data-section="analytics">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span class="nav-text">Analytics</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#earnings" class="nav-link" data-section="earnings">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span class="nav-text">Earnings</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#reports" class="nav-link" data-section="reports">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span class="nav-text">Reports</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-section">
+                        <span class="nav-section-title">Communication</span>
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a href="#messages" class="nav-link" data-section="messages">
+                                    <i class="fas fa-comments"></i>
+                                    <span class="nav-text">Messages</span>
+                                    <span class="nav-badge new">3</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#reviews" class="nav-link" data-section="reviews">
+                                    <i class="fas fa-star"></i>
+                                    <span class="nav-text">Reviews</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="mentor-profile">
+                    <img src="https://i.pravatar.cc/40?u=mentor" alt="Profile" class="mentor-avatar">
+                    <div class="mentor-info">
+                        <span class="mentor-name">Sarah Johnson</span>
+                        <span class="mentor-status">Senior Mentor</span>
+                    </div>
+                    <div class="profile-dropdown">
+                        <button class="profile-menu-btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#profile"><i class="fas fa-user"></i> Profile</a>
+                            <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+                            <a href="#logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="mobile-sidebar-toggle" id="mobileSidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="breadcrumb">
+                        <span class="breadcrumb-item active" id="currentSection">Dashboard</span>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search anything..." id="globalSearch">
+                    </div>
+                    
+                    <button class="notification-btn" id="notificationBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                    </button>
+                    
+                    <div class="quick-actions-dropdown">
+                        <button class="quick-actions-btn">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" onclick="openModal('schedule-modal')">
+                                <i class="fas fa-calendar-plus"></i> Schedule Session
+                            </a>
+                            <a href="#" onclick="openModal('student-modal')">
+                                <i class="fas fa-user-plus"></i> Add Student
+                            </a>
+                            <a href="#" onclick="openModal('message-modal')">
+                                <i class="fas fa-message"></i> Send Message
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <main class="dashboard-main">
+                <!-- Dashboard Overview -->
+                <section id="dashboard" class="dashboard-section active">
+                    <div class="section-content">
+                        <div class="welcome-banner">
+                            <div class="welcome-content">
+                                <h1>Good morning, Sarah! 👋</h1>
+                                <p>You have 8 sessions scheduled for today. Let's make it a great day!</p>
+                            </div>
+                            <div class="welcome-actions">
+                                <button class="btn btn-primary" onclick="openModal('schedule-modal')">
+                                    <i class="fas fa-plus"></i> Schedule Session
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Enhanced Stats Grid -->
+                        <div class="stats-grid">
+                            <div class="stat-card primary">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>24</h3>
+                                    <p>Active Students</p>
+                                    <div class="stat-trend">
+                                        <i class="fas fa-arrow-up"></i>
+                                        <span>+3 this week</span>
+                                    </div>
+                                </div>
+                                <div class="stat-chart">
+                                    <canvas id="studentsChart" width="60" height="30"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="stat-card success">
+                                <div class="stat-icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>156</h3>
+                                    <p>Sessions This Month</p>
+                                    <div class="stat-trend">
+                                        <i class="fas fa-arrow-up"></i>
+                                        <span>+12% vs last month</span>
+                                    </div>
+                                </div>
+                                <div class="stat-chart">
+                                    <canvas id="sessionsChart" width="60" height="30"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="stat-card warning">
+                                <div class="stat-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>4.9</h3>
+                                    <p>Average Rating</p>
+                                    <div class="stat-trend">
+                                        <i class="fas fa-arrow-up"></i>
+                                        <span>+0.2 this month</span>
+                                    </div>
+                                </div>
+                                <div class="stat-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card accent">
+                                <div class="stat-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>$3,240</h3>
+                                    <p>Monthly Earnings</p>
+                                    <div class="stat-trend">
+                                        <i class="fas fa-arrow-up"></i>
+                                        <span>+18% vs last month</span>
+                                    </div>
+                                </div>
+                                <div class="stat-chart">
+                                    <canvas id="earningsChart" width="60" height="30"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dashboard Grid -->
+                        <div class="dashboard-grid">
+                            <!-- Today's Schedule -->
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3><i class="fas fa-clock"></i> Today's Schedule</h3>
+                                    <a href="#sessions" class="view-all">View All</a>
+                                </div>
+                                <div class="schedule-timeline">
+                                    <div class="timeline-item current">
+                                        <div class="timeline-time">10:00 AM</div>
+                                        <div class="timeline-content">
+                                            <h4>English Conversation</h4>
+                                            <p>with Alex Chen • 60 min</p>
+                                            <div class="session-actions">
+                                                <button class="btn btn-sm btn-primary">Join Now</button>
+                                                <button class="btn btn-sm btn-secondary">Reschedule</button>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-status live">Live</div>
+                                    </div>
+                                    
+                                    <div class="timeline-item upcoming">
+                                        <div class="timeline-time">2:00 PM</div>
+                                        <div class="timeline-content">
+                                            <h4>Grammar Review</h4>
+                                            <p>with Maria Rodriguez • 45 min</p>
+                                            <div class="session-prep">
+                                                <i class="fas fa-file-alt"></i>
+                                                <span>Lesson plan ready</span>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-status upcoming">Upcoming</div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-time">4:30 PM</div>
+                                        <div class="timeline-content">
+                                            <h4>Pronunciation Practice</h4>
+                                            <p>with John Smith • 30 min</p>
+                                        </div>
+                                        <div class="timeline-status scheduled">Scheduled</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Messages -->
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3><i class="fas fa-comments"></i> Recent Messages</h3>
+                                    <a href="#messages" class="view-all">View All</a>
+                                </div>
+                                <div class="messages-list">
+                                    <div class="message-item unread">
+                                        <img src="https://i.pravatar.cc/40?u=alex" alt="Alex" class="message-avatar">
+                                        <div class="message-content">
+                                            <div class="message-header">
+                                                <span class="sender-name">Alex Chen</span>
+                                                <span class="message-time">5 min ago</span>
+                                            </div>
+                                            <p class="message-text">Thank you for the great session today! I feel much more confident with my pronunciation.</p>
+                                        </div>
+                                        <div class="message-status unread-dot"></div>
+                                    </div>
+                                    
+                                    <div class="message-item">
+                                        <img src="https://i.pravatar.cc/40?u=maria" alt="Maria" class="message-avatar">
+                                        <div class="message-content">
+                                            <div class="message-header">
+                                                <span class="sender-name">Maria Rodriguez</span>
+                                                <span class="message-time">1 hour ago</span>
+                                            </div>
+                                            <p class="message-text">Could we reschedule tomorrow's session to 3 PM instead?</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="message-item">
+                                        <img src="https://i.pravatar.cc/40?u=john" alt="John" class="message-avatar">
+                                        <div class="message-content">
+                                            <div class="message-header">
+                                                <span class="sender-name">John Smith</span>
+                                                <span class="message-time">2 hours ago</span>
+                                            </div>
+                                            <p class="message-text">I've completed the homework you assigned. Looking forward to our next session!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Performance Overview -->
+                            <div class="dashboard-card full-width">
+                                <div class="card-header">
+                                    <h3><i class="fas fa-chart-area"></i> Performance Overview</h3>
+                                    <div class="chart-controls">
+                                        <button class="chart-period active" data-period="week">Week</button>
+                                        <button class="chart-period" data-period="month">Month</button>
+                                        <button class="chart-period" data-period="year">Year</button>
+                                    </div>
+                                </div>
+                                <div class="performance-chart">
+                                    <canvas id="performanceChart" width="800" height="300"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Quick Stats -->
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3><i class="fas fa-bolt"></i> Quick Stats</h3>
+                                </div>
+                                <div class="quick-stats">
+                                    <div class="quick-stat">
+                                        <div class="stat-icon-sm">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-value">127</span>
+                                            <span class="stat-label">Hours Taught</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="quick-stat">
+                                        <div class="stat-icon-sm">
+                                            <i class="fas fa-trophy"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-value">89%</span>
+                                            <span class="stat-label">Success Rate</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="quick-stat">
+                                        <div class="stat-icon-sm">
+                                            <i class="fas fa-heart"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-value">96%</span>
+                                            <span class="stat-label">Satisfaction</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="quick-stat">
+                                        <div class="stat-icon-sm">
+                                            <i class="fas fa-medal"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-value">12</span>
+                                            <span class="stat-label">Achievements</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Activity -->
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3><i class="fas fa-history"></i> Recent Activity</h3>
+                                </div>
+                                <div class="activity-feed">
+                                    <div class="activity-item">
+                                        <div class="activity-icon completed">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <p><strong>Session completed</strong> with Alex Chen</p>
+                                            <span class="activity-time">2 hours ago</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="activity-item">
+                                        <div class="activity-icon new">
+                                            <i class="fas fa-user-plus"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <p><strong>New student enrolled:</strong> Emma Wilson</p>
+                                            <span class="activity-time">5 hours ago</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="activity-item">
+                                        <div class="activity-icon rating">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <p><strong>5-star rating</strong> from Maria Rodriguez</p>
+                                            <span class="activity-time">1 day ago</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="activity-item">
+                                        <div class="activity-icon payment">
+                                            <i class="fas fa-dollar-sign"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <p><strong>Payment received</strong> $120 from John Smith</p>
+                                            <span class="activity-time">2 days ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Students Section -->
+                <section id="students" class="dashboard-section">
+                    <div class="section-content">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <h2>My Students</h2>
+                                <p>Manage and track your students' progress</p>
+                            </div>
+                            <button class="btn btn-primary" onclick="openModal('student-modal')">
+                                <i class="fas fa-plus"></i> Add Student
+                            </button>
+                        </div>
+
+                        <div class="students-filters">
+                            <div class="filter-group">
+                                <div class="search-box">
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" placeholder="Search students..." id="studentSearch">
+                                </div>
+                                
+                                <select class="filter-select">
+                                    <option value="all">All Levels</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                </select>
+                                
+                                <select class="filter-select">
+                                    <option value="all">All Status</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                    <option value="trial">Trial</option>
+                                </select>
+                            </div>
+                            
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-btn" data-view="list">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="students-grid" id="studentsContainer">
+                            <div class="student-card">
+                                <div class="student-header">
+                                    <img src="https://i.pravatar.cc/60?u=alex" alt="Alex Chen" class="student-avatar">
+                                    <div class="student-info">
+                                        <h4>Alex Chen</h4>
+                                        <span class="student-level intermediate">Intermediate</span>
+                                        <div class="student-meta">
+                                            <span><i class="fas fa-calendar"></i> Joined 3 months ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="student-actions">
+                                        <button class="action-btn-sm" title="Send Message">
+                                            <i class="fas fa-message"></i>
+                                        </button>
+                                        <button class="action-btn-sm" title="Start Session">
+                                            <i class="fas fa-video"></i>
+                                        </button>
+                                        <button class="action-btn-sm" title="More Options">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="student-stats">
+                                    <div class="stat">
+                                        <span class="label">Sessions</span>
+                                        <span class="value">24</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">Progress</span>
+                                        <span class="value">78%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">Rating</span>
+                                        <span class="value">4.8★</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="student-progress">
+                                    <div class="progress-label">
+                                        <span>Overall Progress</span>
+                                        <span>78%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 78%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="student-footer">
+                                    <span class="last-session">Last session: 2 days ago</span>
+                                    <span class="next-session">Next: Tomorrow 2:00 PM</span>
+                                </div>
+                            </div>
+
+                            <!-- More student cards would be here -->
+                            <div class="student-card">
+                                <div class="student-header">
+                                    <img src="https://i.pravatar.cc/60?u=maria" alt="Maria Rodriguez" class="student-avatar">
+                                    <div class="student-info">
+                                        <h4>Maria Rodriguez</h4>
+                                        <span class="student-level beginner">Beginner</span>
+                                        <div class="student-meta">
+                                            <span><i class="fas fa-calendar"></i> Joined 1 month ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="student-actions">
+                                        <button class="action-btn-sm" title="Send Message">
+                                            <i class="fas fa-message"></i>
+                                        </button>
+                                        <button class="action-btn-sm" title="Start Session">
+                                            <i class="fas fa-video"></i>
+                                        </button>
+                                        <button class="action-btn-sm" title="More Options">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="student-stats">
+                                    <div class="stat">
+                                        <span class="label">Sessions</span>
+                                        <span class="value">12</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">Progress</span>
+                                        <span class="value">45%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">Rating</span>
+                                        <span class="value">5.0★</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="student-progress">
+                                    <div class="progress-label">
+                                        <span>Overall Progress</span>
+                                        <span>45%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="student-footer">
+                                    <span class="last-session">Last session: 1 day ago</span>
+                                    <span class="next-session">Next: Today 4:30 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Other sections would be implemented similarly -->
+                <section id="sessions" class="dashboard-section">
+                    <div class="section-content">
+                        <h2>Sessions Management</h2>
+                        <p>This section would contain session management features...</p>
+                    </div>
+                </section>
+
+                <section id="calendar" class="dashboard-section">
+                    <div class="section-content">
+                        <h2>Calendar View</h2>
+                        <p>This section would contain a calendar interface...</p>
+                    </div>
+                </section>
+
+                <section id="analytics" class="dashboard-section">
+                    <div class="section-content">
+                        <h2>Analytics Dashboard</h2>
+                        <p>This section would contain detailed analytics...</p>
+                    </div>
+                </section>
+
+                <section id="earnings" class="dashboard-section">
+                    <div class="section-content">
+                        <h2>Earnings Overview</h2>
+                        <p>This section would contain earnings details...</p>
+                    </div>
+                </section>
+
+                <section id="reports" class="dashboard-section">
+                    <div class="section-content">
+                        <h2>Reports</h2>
+                        <p>This section would contain various reports...</p>
+                    </div>
+                </section>
+
+                <section id="messages" class="dashboard-section">
+                    <div class="section-content">
+                        <h2>Messages</h2>
+                        <p>This section would contain messaging interface...</p>
+                    </div>
+                </section>
+
+                <section id="reviews" class="dashboard-section">
+                    <div class="section-content">
+                        <h2>Reviews & Ratings</h2>
+                        <p>This section would contain reviews management...</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Modals -->
+    <div class="modal" id="schedule-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('schedule-modal')">&times;</button>
+            <h2 class="modal-title">Schedule New Session</h2>
+            <form>
+                <div class="form-group">
+                    <label for="student-select">Student</label>
+                    <select id="student-select" class="form-control" required>
+                        <option value="">Select a student</option>
+                        <option value="alex">Alex Chen</option>
+                        <option value="maria">Maria Rodriguez</option>
+                        <option value="john">John Smith</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="session-date">Date</label>
+                        <input type="date" id="session-date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="session-time">Time</label>
+                        <input type="time" id="session-time" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="session-duration">Duration</label>
+                    <select id="session-duration" class="form-control" required>
+                        <option value="30">30 minutes</option>
+                        <option value="45">45 minutes</option>
+                        <option value="60">60 minutes</option>
+                        <option value="90">90 minutes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="session-type">Session Type</label>
+                    <select id="session-type" class="form-control" required>
+                        <option value="conversation">Conversation Practice</option>
+                        <option value="grammar">Grammar Review</option>
+                        <option value="pronunciation">Pronunciation</option>
+                        <option value="writing">Writing Skills</option>
+                        <option value="exam-prep">Exam Preparation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="session-notes">Session Notes</label>
+                    <textarea id="session-notes" class="form-control" rows="3" placeholder="Objectives, materials needed, special requirements..."></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('schedule-modal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Schedule Session</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="student-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('student-modal')">&times;</button>
+            <h2 class="modal-title">Add New Student</h2>
+            <form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="student-first-name">First Name</label>
+                        <input type="text" id="student-first-name" class="form-control" placeholder="First name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-last-name">Last Name</label>
+                        <input type="text" id="student-last-name" class="form-control" placeholder="Last name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="student-email">Email Address</label>
+                    <input type="email" id="student-email" class="form-control" placeholder="student@example.com" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="student-level">English Level</label>
+                        <select id="student-level" class="form-control" required>
+                            <option value="">Select level</option>
+                            <option value="beginner">Beginner (A1-A2)</option>
+                            <option value="intermediate">Intermediate (B1-B2)</option>
+                            <option value="advanced">Advanced (C1-C2)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-timezone">Timezone</label>
+                        <select id="student-timezone" class="form-control" required>
+                            <option value="UTC-8">Pacific Time (UTC-8)</option>
+                            <option value="UTC-5">Eastern Time (UTC-5)</option>
+                            <option value="UTC+0">GMT (UTC+0)</option>
+                            <option value="UTC+1">Central European Time (UTC+1)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="student-goals">Learning Goals</label>
+                    <textarea id="student-goals" class="form-control" rows="3" placeholder="What does the student want to achieve? (e.g., business English, exam preparation, conversation skills...)"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="student-interests">Interests & Hobbies</label>
+                    <input type="text" id="student-interests" class="form-control" placeholder="Sports, music, travel, technology...">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('student-modal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Student</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./m-dash.js"></script>
+</body>
+</html>
