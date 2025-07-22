@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluento - Your Journey to English Fluency</title>
+    <link rel="stylesheet" href="./home.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-logo">Fluento</div>
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Main wrapper -->
+    <div class="main-content-wrapper">
+        <!-- Header -->
+        <header>
+            <div class="container navbar-container">
+                <a href="#" class="logo">Fluento</a>
+
+                    <div class="nav-links">
+                        <a href="#features">Features</a>
+                        <a href="#success-stories">Success Stories</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    
+                    <div class="auth-buttons">
+                        <button class="btn btn-secondary" onclick="openModal('login-modal')">Login</button>
+                        <button class="btn btn-primary" onclick="openModal('signup-modal')">Sign Up</button>
+                    </div>
+                
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu">
+            <nav class="mobile-nav-links">
+                <a href="#features">Features</a>
+                <a href="#success-stories">Success Stories</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="mobile-auth-buttons">
+                <button class="btn btn-secondary" onclick="openModal('login-modal')">Login</button>
+                <button class="btn btn-primary" onclick="openModal('signup-modal')">Sign Up</button>
+            </div>
+        </div>
+
+        <!-- Main -->
+        <main id="main-content">
+            <!-- Hero -->
+            <section class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-badge"><i class="fas fa-graduation-cap"></i><span>Start Your English Fluency
+                                Journey Today</span></div>
+                        <h1>Unlock Your English Potential with AI-Powered Learning</h1>
+                        <p>Join our innovative platform and experience a personalized learning journey tailored to your
+                            unique needs. Achieve fluency faster than ever before!</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="openModal('signup-modal')">Start Free
+                                Trial</button>
+                            <a href="#features" class="btn btn-accent">Explore Features</a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">10,000+</div>
+                                <div class="stat-label">Active Learners</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Expert Tutors</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">4.9/5</div>
+                                <div class="stat-label">Average Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section id="features" class="features-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Key Features to Boost Your Fluency</h2>
+                        <p>Discover the tools and resources that make our platform the ultimate solution for English
+                            language learners.</p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                            <h3>AI-Powered Tutor</h3>
+                            <p>Practice conversations and receive instant feedback from our intelligent AI tutor.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-video"></i></div>
+                            <h3>Live Video Sessions</h3>
+                            <p>Connect with certified tutors for personalized guidance and real-time practice.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
+                            <h3>Interactive Games</h3>
+                            <p>Make learning fun with engaging games that improve your vocabulary and grammar.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                            <h3>Community Forums</h3>
+                            <p>Join discussions, share tips, and connect with fellow learners from around the world.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-book"></i></div>
+                            <h3>Personalized Lessons</h3>
+                            <p>Follow a structured curriculum tailored to your skill level and learning goals.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                            <h3>Progress Tracking</h3>
+                            <p>Monitor your progress and celebrate your achievements as you advance towards fluency.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Success Stories -->
+            <section id="success-stories" class="success-stories-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Real Stories, Real Results</h2>
+                        <p>See how our learners have transformed their lives with FluentPath.</p>
+                    </div>
+                    <div class="success-stories-grid">
+                        <div class="success-story-card">
+                            <div class="story-header">
+                                <div class="story-avatar"><img src="https://i.pravatar.cc/60?u=jane" alt="Jane Doe"
+                                        class="avatar-img"></div>
+                                <div class="story-info">
+                                    <h4>Jane Doe</h4>
+                                    <div class="role">Marketing Manager</div>
+                                    <div class="story-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i></div>
+                                </div>
+                            </div>
+                            <blockquote>FluentPath helped me improve my English skills and advance my career. The live
+                                sessions were invaluable!</blockquote>
+                            <div class="story-stats">
+                                <div class="story-stat">
+                                    <div class="number">6</div>
+                                    <div class="label">Months</div>
+                                </div>
+                                <div class="story-stat">
+                                    <div class="number">200+</div>
+                                    <div class="label">Hours</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="success-story-card">
+                            <div class="story-header">
+                                <div class="story-avatar"><img src="https://i.pravatar.cc/60?u=john" alt="John Smith"
+                                        class="avatar-img"></div>
+                                <div class="story-info">
+                                    <h4>John Smith</h4>
+                                    <div class="role">Student</div>
+                                    <div class="story-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="far fa-star"></i></div>
+                                </div>
+                            </div>
+                            <blockquote>I was able to pass my English proficiency exam thanks to FluentPath's
+                                personalized lessons and AI tutor.</blockquote>
+                            <div class="story-stats">
+                                <div class="story-stat">
+                                    <div class="number">3</div>
+                                    <div class="label">Months</div>
+                                </div>
+                                <div class="story-stat">
+                                    <div class="number">100+</div>
+                                    <div class="label">Lessons</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="success-story-card">
+                            <div class="story-header">
+                                <div class="story-avatar"><img src="https://i.pravatar.cc/60?u=emily"
+                                        alt="Emily Johnson" class="avatar-img"></div>
+                                <div class="story-info">
+                                    <h4>Emily Johnson</h4>
+                                    <div class="role">Travel Enthusiast</div>
+                                    <div class="story-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i></div>
+                                </div>
+                            </div>
+                            <blockquote>FluentPath gave me the confidence to travel the world and communicate with
+                                people from different cultures.</blockquote>
+                            <div class="story-stats">
+                                <div class="story-stat">
+                                    <div class="number">1</div>
+                                    <div class="label">Year</div>
+                                </div>
+                                <div class="story-stat">
+                                    <div class="number">20+</div>
+                                    <div class="label">Countries</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing -->
+            <section id="pricing" class="pricing-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Flexible Plans for Every Learner</h2>
+                        <p>Choose the plan that best fits your needs and budget.</p>
+                    </div>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h3>Basic</h3>
+                            </div>
+                            <div class="pricing-price"><span class="currency">$</span><span class="amount">9</span><span
+                                    class="period">/month</span></div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Access to AI Tutor</li>
+                                <li><i class="fas fa-check"></i> Limited Lessons</li>
+                                <li class="unavailable"><i class="fas fa-times"></i> Live Sessions</li>
+                                <li class="unavailable"><i class="fas fa-times"></i> Community Access</li>
+                            </ul>
+                            <button class="btn btn-primary">Get Started</button>
+                        </div>
+                        <div class="pricing-card featured">
+                            <div class="pricing-header">
+                                <h3>Premium</h3>
+                            </div>
+                            <div class="pricing-price"><span class="currency">$</span><span
+                                    class="amount">29</span><span class="period">/month</span></div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Access to AI Tutor</li>
+                                <li><i class="fas fa-check"></i> Unlimited Lessons</li>
+                                <li><i class="fas fa-check"></i> 5 Live Sessions</li>
+                                <li><i class="fas fa-check"></i> Community Access</li>
+                            </ul>
+                            <button class="btn btn-primary">Get Started</button>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h3>Elite</h3>
+                            </div>
+                            <div class="pricing-price"><span class="currency">$</span><span
+                                    class="amount">49</span><span class="period">/month</span></div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Access to AI Tutor</li>
+                                <li><i class="fas fa-check"></i> Unlimited Lessons</li>
+                                <li><i class="fas fa-check"></i> Unlimited Live Sessions</li>
+                                <li><i class="fas fa-check"></i> Community Access</li>
+                            </ul>
+                            <button class="btn btn-primary">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section id="contact" class="cta-section">
+                <div class="container">
+                    <div class="cta-content">
+                        <h2>Ready to Transform Your English Skills?</h2>
+                        <p>Join FluentPath today and unlock a world of opportunities.</p>
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary" onclick="openModal('signup-modal')">Start Free
+                                Trial</button>
+                            <a href="mailto:hello@fluentpath.com" class="btn btn-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <a href="#" class="footer-logo">Fluento</a>
+                    <div class="footer-links-grid">
+                        <div>
+                            <h4>About</h4>
+                            <a href="#">Our Story</a>
+                            <a href="#">Team</a>
+                            <a href="#">Careers</a>
+                        </div>
+                        <div>
+                            <h4>Resources</h4>
+                            <a href="#">Blog</a>
+                            <a href="#">Help Center</a>
+                            <a href="#">Community</a>
+                        </div>
+                        <div>
+                            <h4>Plans</h4>
+                            <a href="#">Basic</a>
+                            <a href="#">Premium</a>
+                            <a href="#">Elite</a>
+                        </div>
+                        <div>
+                            <h4>Legal</h4>
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Cookie Policy</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <p class="copyright">&copy; 2024 FluentPath. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('login-modal')">&times;</button>
+            <h2 class="modal-title">Login</h2>
+            <form>
+                <div class="form-group"><label for="login-email">Email</label><input type="email" id="login-email"
+                        class="form-control" placeholder="Your Email" required></div>
+                <div class="form-group"><label for="login-password">Password</label><input type="password"
+                        id="login-password" class="form-control" placeholder="Your Password" required></div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('signup-modal')">&times;</button>
+            <h2 class="modal-title">Sign Up</h2>
+            <form>
+                <div class="form-group"><label for="signup-name">Name</label><input type="text" id="signup-name"
+                        class="form-control" placeholder="Your Name" required></div>
+                <div class="form-group"><label for="signup-email">Email</label><input type="email" id="signup-email"
+                        class="form-control" placeholder="Your Email" required></div>
+                <div class="form-group"><label for="signup-password">Password</label><input type="password"
+                        id="signup-password" class="form-control" placeholder="Your Password" required></div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+  <script src="./home.js"></script>
+</body>
+
+</html>
